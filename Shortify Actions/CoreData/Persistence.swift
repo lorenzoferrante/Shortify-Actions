@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -13,10 +14,19 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+        
+        let newCategory = Category(context: viewContext)
+        newCategory.name = "Videos"
+        newCategory.id = UUID()
+        newCategory.colorType = CustomColors.Orange.rawValue
+        newCategory.icon = ""
+        
+        let newItem = Item(context: viewContext)
+        newItem.category = newCategory.id
+        newItem.id = UUID()
+        newItem.title = "DuckDuck Go"
+        newItem.link = "https://duckduckgo.com"
+        
         do {
             try viewContext.save()
         } catch {
@@ -51,5 +61,49 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+    }
+    
+    public func addNewCategory(category: CategoryField) {
+        let newCategory = Category(context: self.container.viewContext)
+        newCategory.id = UUID()
+        newCategory.name = category.name
+        newCategory.icon = category.icon
+        newCategory.colorType = category.color.rawValue
+        saveData()
+    }
+    
+    public func addNewAction(action: ActionField) {
+        let newAction = Item(context: self.container.viewContext)
+        newAction.category = action.category
+        newAction.title = action.title
+        newAction.link = action.link
+        newAction.id = UUID()
+        saveData()
+    }
+    
+    public func editAction(action: ActionField) {
+        let fetchRequest = NSFetchRequest<Item>(entityName: "Item")
+        do {
+            let items = try self.container.viewContext.fetch(fetchRequest) as [Item]
+            for item in items {
+                if item.id == action.id {
+                    item.title = action.title
+                    item.link = action.link
+                    saveData()
+                }
+            }
+        } catch {
+            print("Unable to fetch items!")
+        }
+    }
+    
+    private func saveData() {
+        do {
+            try self.container.viewContext.save()
+        } catch {
+            print("Error saving the new action")
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
