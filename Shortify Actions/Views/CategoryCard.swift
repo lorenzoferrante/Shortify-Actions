@@ -23,14 +23,14 @@ struct CategoryCard: View {
                 HStack {
                     Text(icon)
                         .font(fontAwesomeSwiftUI)
-                        .foregroundColor((colorType == CustomColors.White ? .black : .white))
+                        .foregroundColor((colorType == CustomColors.White ? .black : .ivory))
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                     
                     Spacer()
                     
                     Text("\(Int.random(in: 1...20)) items")
                         .font(.system(size: 14.0, weight: .semibold, design: .rounded))
-                        .foregroundColor((colorType == CustomColors.White ? .black : .white))
+                        .foregroundColor((colorType == CustomColors.White ? .black : .ivory))
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                         .background(RoundedRectangle(cornerRadius: 10).inset(by: 5.0).fill((colorType == CustomColors.White ? Color.black.opacity(0.1) : Color.black.opacity(0.3)))
                 )}
@@ -38,7 +38,7 @@ struct CategoryCard: View {
                 Text(title)
                     .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                     .font(.system(size: 18.0, weight: .bold, design: .rounded))
-                    .foregroundColor((colorType == CustomColors.White ? .black : .white))
+                    .foregroundColor((colorType == CustomColors.White ? .black : .ivory))
                     
             }
             .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))

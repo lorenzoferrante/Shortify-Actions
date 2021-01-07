@@ -66,7 +66,7 @@ struct ActionList: View {
 
 struct ActionList_Previews: PreviewProvider {
     static var previews: some View {
-        Text("Ciao")
-        //ActionList(uuid: UUID(), title: "Prova")
+//        Text("Ciao")
+        ActionList(uuid: UUID(), title: "Prova")
     }
 }

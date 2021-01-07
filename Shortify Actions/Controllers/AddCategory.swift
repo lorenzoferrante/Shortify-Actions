@@ -137,7 +137,7 @@ struct AddCategory: View {
                                 Circle()
                                     .frame(width: 60, height: 60)
                                     .clipShape(Circle())
-                                    .overlay(Circle().fill(LinearGradient(gradient: Gradient(colors: [Color.white.getColors(colorType: color)[0], Color.white.getColors(colorType: color)[1]]), startPoint: .top, endPoint: .bottom)))
+                                    .overlay(Circle().fill(LinearGradient(gradient: Gradient(colors: [Color.ivory.getColors(colorType: color)[0], Color.ivory.getColors(colorType: color)[1]]), startPoint: .top, endPoint: .bottom)))
                                     .overlay(
                                         Circle()
                                             .strokeBorder(

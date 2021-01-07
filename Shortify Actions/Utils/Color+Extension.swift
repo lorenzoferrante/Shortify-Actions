@@ -61,7 +61,7 @@ extension Color {
     
     static let noir = Color(hex: "#000")
     
-    static let white = Color(hex: "#fff")
+    static let ivory = Color(hex: "#fff")
     
     static let almostBlackTop = Color(hex: "#222222")
     static let almostBlackBottom = Color(hex: "#090909")
@@ -105,7 +105,7 @@ extension Color {
         case .Noir:
             return [.noir, .noir]
         case .White:
-            return [.white, .white]
+            return [.ivory, .ivory]
         }
         
     }

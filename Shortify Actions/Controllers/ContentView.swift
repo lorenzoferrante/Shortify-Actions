@@ -46,10 +46,25 @@ struct ContentView: View {
             }
             .navigationBarTitle(Text("Shortify Actions"))
             .navigationBarTitleDisplayMode(.automatic)
-            .navigationBarItems(trailing: addCategoryButton())
+            .navigationBarItems(
+                leading: addSettingsButton(),
+                trailing: addCategoryButton()
+            )
             .navigationViewStyle(StackNavigationViewStyle())
         }
         
+    }
+    
+    private func addSettingsButton() -> some View {
+        var body: some View {
+            Button(action: {
+                self.isPresented.toggle()
+            }, label: {
+                Image(systemName: "gear")
+                    .imageScale(.large)
+            }).sheet(isPresented: $isPresented, content: {AddCategory(isPresented: $isPresented)})
+        }
+        return body
     }
     
     private func addCategoryButton() -> some View {
