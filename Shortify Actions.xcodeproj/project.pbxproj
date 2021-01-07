@@ -13,6 +13,7 @@
 		50132B03255ECE8E00374FD6 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50132AFF255ECE8E00374FD6 /* Category+CoreDataProperties.swift */; };
 		50132B04255ECE8E00374FD6 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50132B00255ECE8E00374FD6 /* Item+CoreDataClass.swift */; };
 		50132B05255ECE8E00374FD6 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50132B01255ECE8E00374FD6 /* Item+CoreDataProperties.swift */; };
+		505D3A7B25A7823400241524 /* TextCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505D3A7A25A7823400241524 /* TextCategoryCard.swift */; };
 		50953648255F07BB00CCC97D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50953647255F07BB00CCC97D /* String+Extension.swift */; };
 		5095364E255F081800CCC97D /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095364D255F081800CCC97D /* AddCategory.swift */; };
 		50A30CFB256025760025E378 /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 50A30CFA256025760025E378 /* Font Awesome 5 Free-Regular-400.otf */; };
@@ -37,6 +38,7 @@
 		50132AFF255ECE8E00374FD6 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50132B00255ECE8E00374FD6 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		50132B01255ECE8E00374FD6 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		505D3A7A25A7823400241524 /* TextCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCategoryCard.swift; sourceTree = "<group>"; };
 		50953647255F07BB00CCC97D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		5095364D255F081800CCC97D /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
 		5095F804255FF7BA00866D8B /* Shortify Actions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Shortify Actions.entitlements"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				50E84ADB255F0311000C98E0 /* NewCategoryCard.swift */,
 				50E84ABB255EDA66000C98E0 /* CategoryCard.swift */,
+				505D3A7A25A7823400241524 /* TextCategoryCard.swift */,
 				50F5F20625605C2200B12724 /* ActionCard.swift */,
 				5002659D256276E600451B1B /* PreviewCard.swift */,
 			);
@@ -242,6 +245,7 @@
 				50953648255F07BB00CCC97D /* String+Extension.swift in Sources */,
 				5002659E256276E600451B1B /* PreviewCard.swift in Sources */,
 				50132B05255ECE8E00374FD6 /* Item+CoreDataProperties.swift in Sources */,
+				505D3A7B25A7823400241524 /* TextCategoryCard.swift in Sources */,
 				50E84ABC255EDA66000C98E0 /* CategoryCard.swift in Sources */,
 				50B5E9F3255EB9CB008DDF2B /* Shortify_Actions.xcdatamodeld in Sources */,
 				50F5F20725605C2200B12724 /* ActionCard.swift in Sources */,

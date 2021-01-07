@@ -30,19 +30,19 @@ struct AddCategory: View {
     var body: some View {
         NavigationView {
             VStack {
-                CategoryCard(title: $categoryField.name,
-                             icon: $categoryField.icon,
-                             colorType: $categoryField.color)
+                TextCategoryCard(title: $categoryField.name,
+                                 icon: $categoryField.icon,
+                                 colorType: $categoryField.color)
                 
                 pickerView()
                 
                 if selectedTag == 0 {
-                    nameTag()
-                } else if selectedTag == 1 {
                     colorTag()
-                } else if selectedTag == 2 {
+                } else if selectedTag == 1 {
                     iconTag()
                 }
+                
+                
 
                 Spacer()
             }
@@ -55,9 +55,9 @@ struct AddCategory: View {
     private func pickerView() -> some View {
         var body: some View {
             Picker("Customize Category", selection: $selectedTag) {
-                Text("Name").tag(0)
-                Text("Color").tag(1)
-                Text("Icon").tag(2)
+                //Text("Name").tag(0)
+                Text("Color").tag(0)
+                Text("Icon").tag(1)
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding(EdgeInsets(top: 5, leading: 20, bottom: 5, trailing: 20))

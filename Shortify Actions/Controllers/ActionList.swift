@@ -15,6 +15,9 @@ struct ActionList: View {
     @State var isPresented: Bool = false
     @State var isEditPresented: Bool = false
     
+    @State var actionName: String = ""
+    @State var actionLink: String = ""
+    
     var fetchRequest: FetchRequest<Item>
     var categoryName: String
     var categoryID: UUID
@@ -35,7 +38,10 @@ struct ActionList: View {
                     Link(destination: URL(string: item.link)!) {
                         ActionCard(title: .constant(item.title), editAction: {
                             self.$isEditPresented.wrappedValue.toggle()
-                        }).sheet(isPresented: $isEditPresented, content: {EditAction(actionName: item.title, actionURL: item.link, isPresented: $isEditPresented)})
+                            actionName = item.title
+                            actionLink = item.link
+                            debug(el: item)
+                        }).sheet(isPresented: $isEditPresented, content: {EditAction(actionName: actionName, actionURL: actionLink, isPresented: $isEditPresented)})
                     }
                 }
                 
@@ -61,6 +67,10 @@ struct ActionList: View {
             }).sheet(isPresented: $isPresented, content: {AddAction(isPresented: $isPresented, categoryID: categoryID)})
         }
         return body
+    }
+    
+    private func debug(el: Item) {
+        print("[DEBUG] \(el.title) - \(el.link)")
     }
 }
 
